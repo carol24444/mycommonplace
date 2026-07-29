@@ -1,0 +1,47 @@
+body {
+  background-color: #EDE8D0;
+  color: brown;
+  font-family: Consolas;
+}
+
+.main {
+  background-color: white;
+  border: 5px dashed #a5865a;
+  margin: 100px;
+  padding: 10px;
+  height: 1000px;
+  align-self: center;
+}
+
+.main-nav-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.main-button {
+  background-color: white;
+  height: 40px;
+  width: 210px;
+  border: 2px solid #a5865a;
+  font-size: 20px;
+  transition-duration: 0.4s;
+}
+
+.main-button:hover {
+  background-color: #a5865a;
+  color: white;
+}
+
+.about-me {
+  border: 2px solid #a5865a;
+  margin: 10px;
+  width: 800px;
+  text-align: center;
+  height: 100px;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
