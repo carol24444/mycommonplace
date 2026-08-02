@@ -1,30 +1,49 @@
 body {
+  background-image: url("assets/background.png");
   background-color: #EDE8D0;
   color: brown;
   font-family: Consolas;
+  margin-top:-25px;
+}
+
+header {
+  background-color: #a5865a;
+  height: 80px;
+  margin-left:-10px;
+  margin-right: -10px;
+  padding-top: 30px;
+  display:flex;
+  justify-content: center;
+}
+
+h1 {
+  color: #EDE8D0;
+}
+
+h2 {
+  color: #a5865a;
 }
 
 .main {
   background-color: white;
   border: 5px dashed #a5865a;
-  margin: 100px;
+  margin: 100px auto;
   padding: 10px;
   height: 1000px;
-  align-self: center;
-}
-
-.main-nav-bar {
-  display: flex;
-  justify-content: center;
+  width: 1200px;
 }
 
 .main-button {
   background-color: white;
+  font-family: Consolas;
   height: 40px;
-  width: 210px;
+  width: 250px;
+  margin-left:-5px;
+  margin-right:-5px;
   border: 2px solid #a5865a;
   font-size: 20px;
   transition-duration: 0.4s;
+  cursor:pointer;
 }
 
 .main-button:hover {
@@ -32,16 +51,22 @@ body {
   color: white;
 }
 
-.about-me {
+.text-box {
+  background-color: white;
   border: 2px solid #a5865a;
   margin: 10px;
-  width: 800px;
-  text-align: center;
+}
+
+.blog-element {
+  background-color: white;
+  border: 2px solid #a5865a;
+  margin: 50px;
+  width: 1400px;
+  text-align:left;
   height: 100px;
 }
 
-.intro {
-  display: flex;
-  justify-content: center;
-  margin: 30px;
+.blog-element-txt {
+  padding-left: 20px;
 }
+
