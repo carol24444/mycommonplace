@@ -9,10 +9,10 @@ body {
 header {
   background-color: #a5865a;
   height: 80px;
-  margin-left:-10px;
+  margin-left: -10px;
   margin-right: -10px;
   padding-top: 30px;
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
@@ -20,7 +20,7 @@ h1 {
   color: #EDE8D0;
 }
 
-h2 {
+h3{
   color: #a5865a;
 }
 
@@ -29,8 +29,7 @@ h2 {
   border: 5px dashed #a5865a;
   margin: 100px auto;
   padding: 10px;
-  height: 1000px;
-  width: 1200px;
+  width: 1000px;
 }
 
 .main-button {
@@ -38,8 +37,8 @@ h2 {
   font-family: Consolas;
   height: 40px;
   width: 250px;
-  margin-left:-5px;
-  margin-right:-5px;
+  margin-left: -5px;
+  margin-right: -5px;
   border: 2px solid #a5865a;
   font-size: 20px;
   transition-duration: 0.4s;
@@ -60,13 +59,31 @@ h2 {
 .blog-element {
   background-color: white;
   border: 2px solid #a5865a;
-  margin: 50px;
-  width: 1400px;
+  margin: 25px;
   text-align:left;
-  height: 100px;
+  width: 400px;
+  padding-left: 10px;
 }
 
-.blog-element-txt {
-  padding-left: 20px;
+#blog-title a {
+  color: #a5865a;
+  text-decoration: none;
+}
+
+#blog-title a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: brown;
+  font-weight: bold;
+}
+
+a:link {
+  color: brown;
+}
+
+a:hover {
+  color:#a5865a;
 }
 
