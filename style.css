@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+@font-face { 
+	font-family: "Patchwork Stitchlings"; 
+	src: url("./fonts/Patchwork Stitchlings/Patchwork Stitchlings.ttf") format("truetype"); 
+	font-weight: normal;
+	font-style: normal; 
+	font-display: swap; 
+}
+
+@font-face { 
+	font-family: "PixelitoCM"; 
+	src: url("./fonts/PixelitoCM.ttf") format("truetype"); 
+	font-weight: normal;
+	font-style: normal; 
+	font-display: swap; 
+}
+
 body {
   background-image: url("assets/background.png");
   background-color: #EDE8D0;
   color: brown;
-  font-family: Consolas;
+  font-family: "Pixelify Sans";
   margin-top:-25px;
 }
 
@@ -17,10 +35,31 @@ header {
 }
 
 h1 {
+  font-family: "Patchwork Stitchlings",Consolas;
+  font-size: 22px;
   color: #EDE8D0;
 }
 
+h2 {
+  font-family: "PixelitoCM",Consolas;
+  font-size: 45px;
+  font-style:normal;
+  font-weight: normal;
+}
+
 h3{
+  font-family: "PixelitoCM",Consolas;
+  font-size: 32px;
+  font-style:normal;
+  font-weight: normal;
+  color: #a5865a;
+}
+
+h4{
+  font-family: "PixelitoCM";
+  font-size: 30px;
+  font-style:normal;
+  font-weight: normal;
   color: #a5865a;
 }
 
@@ -28,7 +67,7 @@ h3{
   background-color: white;
   border: 5px dashed #a5865a;
   margin: 100px auto;
-  padding: 10px;
+  padding: 20px;
   width: 1000px;
 }
 
@@ -40,7 +79,8 @@ h3{
   margin-left: -5px;
   margin-right: -5px;
   border: 2px solid #a5865a;
-  font-size: 20px;
+  font-family: "PixelitoCM";
+  font-size: 27px;
   transition-duration: 0.4s;
   cursor:pointer;
 }
@@ -54,6 +94,7 @@ h3{
   background-color: white;
   border: 2px solid #a5865a;
   margin: 10px;
+  padding: 7px;
 }
 
 .blog-element {
@@ -62,7 +103,7 @@ h3{
   margin: 25px;
   text-align:left;
   width: 400px;
-  padding-left: 10px;
+  padding: 15px;
 }
 
 #blog-title a {
