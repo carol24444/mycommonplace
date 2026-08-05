@@ -22,6 +22,7 @@ body {
   color: brown;
   font-family: "Pixelify Sans";
   margin-top:-25px;
+  cursor: url('assets/cake_cat_cursor.gif'), default;
 }
 
 header {
@@ -45,6 +46,8 @@ h2 {
   font-size: 45px;
   font-style:normal;
   font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 h3{
@@ -53,14 +56,37 @@ h3{
   font-style:normal;
   font-weight: normal;
   color: #a5865a;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 h4{
-  font-family: "PixelitoCM";
+  font-family: "PixelitoCM",Consolas;
   font-size: 30px;
   font-style:normal;
   font-weight: normal;
   color: #a5865a;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: brown;
+  font-weight: bold;
+}
+
+a:link {
+  color: brown;
+}
+
+a:hover {
+  color:#a5865a;
+  cursor: url('assets/cake_cat_cursor.gif'), default;
+}
+
+::selection {
+  color: #EDE8D0;
+  background: #933c3c;
 }
 
 .main {
@@ -82,12 +108,12 @@ h4{
   font-family: "PixelitoCM";
   font-size: 27px;
   transition-duration: 0.4s;
-  cursor:pointer;
 }
 
 .main-button:hover {
   background-color: #a5865a;
   color: white;
+  cursor: url('assets/cake_cat_cursor.gif'), default;
 }
 
 .text-box {
@@ -106,6 +132,11 @@ h4{
   padding: 15px;
 }
 
+.blog-element h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 #blog-title a {
   color: #a5865a;
   text-decoration: none;
@@ -113,19 +144,8 @@ h4{
 
 #blog-title a:hover {
   text-decoration: underline;
-}
+  cursor: url('assets/cake_cat_cursor.gif'), default;
 
-a {
-  color: brown;
-  font-weight: bold;
-}
-
-a:link {
-  color: brown;
-}
-
-a:hover {
-  color:#a5865a;
 }
 
 .breadcrumb {
@@ -146,4 +166,6 @@ a:hover {
   margin: 0 0.60rem;
   content: "→";
 }
+
+
 
