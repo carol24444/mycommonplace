@@ -70,6 +70,16 @@ h4{
   margin-bottom: 10px;
 }
 
+h4{
+  font-family: "PixelitoCM",Consolas;
+  font-size: 30px;
+  font-style:normal;
+  font-weight: normal;
+  color: #a5865a;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 a {
   color: brown;
   font-weight: bold;
@@ -89,24 +99,70 @@ a:hover {
   background: #933c3c;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #EDE8D0;
+    margin: 5px;
+    padding: 0;
+}
+
+.index-main {
+  background-color: white;
+  width: 1000px;
+  border: 2px solid #a5865a;
+  border-radius: 25px;
+  padding: 20px;
+}
+
 .main {
   background-color: white;
   border: 5px dashed #a5865a;
-  margin: 100px auto;
+  border-radius: 25px;
+  margin: 80px auto;
   padding: 20px;
   width: 1000px;
 }
 
+.side-menu {
+  background-color: #a5865a;
+  border-radius: 25px;
+  width: 200px;
+  height: fit-content;
+  padding: 10px;
+  padding-top:15px;
+  text-align: left;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.side-menu p, .side-menu ul, .side-menu ol {
+  color: #EDE8D0;
+  font-weight: normal;
+  font-style: normal;
+  margin-left: 10px;
+}
+
+.side-menu a {
+  color:#EDE8D0;
+  text-decoration: none;
+  margin: 8px;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+
 .main-button {
   background-color: white;
-  font-family: Consolas;
   height: 40px;
-  width: 250px;
+  width: 270px;
   margin-left: -5px;
   margin-right: -5px;
   border: 2px solid #a5865a;
-  font-family: "PixelitoCM";
-  font-size: 27px;
+  font-family: "PixelitoCM",Consolas;
+  font-size: 29px;
   transition-duration: 0.4s;
 }
 
@@ -118,7 +174,7 @@ a:hover {
 
 .text-box {
   background-color: white;
-  border: 2px solid #a5865a;
+  border: 3px dotted #a5865a;
   margin: 10px;
   padding: 7px;
 }
