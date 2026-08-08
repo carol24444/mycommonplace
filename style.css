@@ -124,6 +124,7 @@ hr {
   border: 5px dashed #a5865a;
   border-radius: 25px;
   margin: 80px auto;
+  margin-top: 20px;
   padding: 20px;
   width: 1000px;
 }
@@ -189,6 +190,7 @@ hr {
   border: 3px dotted #a5865a;
   margin: 10px;
   padding: 7px;
+  width: fit-content;
 }
 
 .cookie-border {
@@ -205,29 +207,26 @@ hr {
   width: 400px;       
 }
 
-.blog-element {
-  background-color: white;
-  border: 2px solid #a5865a;
-  margin: 25px;
-  text-align:left;
-  width: 400px;
-  padding: 15px;
+.back-home-button {
+  background-color: #EDE8D0;
+  border: 2px dotted #a5865a;
+  border-radius: 20px;
+  color: #a5865a;
+  width: fit-content;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
 }
 
-.blog-element h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-#blog-title a {
+.back-home-button a {
   color: #a5865a;
   text-decoration: none;
 }
 
-#blog-title a:hover {
+.back-home-button a:hover {
   text-decoration: underline;
   cursor: url('assets/cake_cat_cursor.gif'), default;
-
 }
 
 .breadcrumb {
@@ -247,6 +246,30 @@ hr {
   display: inline-block;
   margin: 0 0.60rem;
   content: "→";
+}
+
+.blog-element {
+  background-color: white;
+  border: 2px solid #a5865a;
+  margin: 25px;
+  text-align:left;
+  width: 400px;
+  padding: 15px;
+}
+
+.blog-element h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.blog-element a {
+  color: #a5865a;
+  text-decoration: none;
+}
+
+.blog-element a:hover {
+  text-decoration: underline;
+  cursor: url('assets/cake_cat_cursor.gif'), default;
 }
 
 .post-it {
