@@ -38,6 +38,31 @@ header {
   justify-content: center;
 }
 
+footer {
+  background-color: #a5865a;
+  height: 80px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+  margin-top: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+footer p {
+  color: #EDE8D0;
+  margin: 5px;
+}
+
+footer a {
+  color: #EDE8D0;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: brown;
+}
+
 h1 {
   font-family: "Patchwork Stitchlings",Consolas;
   font-size: 22px;
