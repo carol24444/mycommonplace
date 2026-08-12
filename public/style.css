@@ -26,6 +26,9 @@ body {
   color: brown;
   font-family: "Pixelify Sans";
   margin-top:-25px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
