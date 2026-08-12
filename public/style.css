@@ -1,3 +1,5 @@
+/* Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 @font-face { 
@@ -15,6 +17,8 @@
 	font-style: normal; 
 	font-display: swap; 
 }
+
+/* Base styling */
 
 html {
   cursor: url('assets/cake_cat_cursor.gif'), default;
@@ -68,8 +72,9 @@ footer a:hover {
 
 h1 {
   font-family: "Patchwork Stitchlings",Consolas;
-  font-size: 22px;
+  font-size: 1.5vw;
   color: #EDE8D0;
+  text-align: center;
 }
 
 h2 {
@@ -139,6 +144,8 @@ hr {
     padding: 0;
 }
 
+/* Main layout elements*/
+
 .index-main {
   background-color: white;
   width: 1000px;
@@ -170,6 +177,8 @@ hr {
   margin-bottom: 10px;
 }
 
+/* Side menu */
+
 .side-menu p, .side-menu ul, .side-menu ol {
   color: #EDE8D0;
   font-weight: normal;
@@ -197,6 +206,8 @@ hr {
   display: block;
 }
 
+/* Main button */
+
 .main-button {
   background-color: white;
   height: 40px;
@@ -205,7 +216,7 @@ hr {
   margin-right: -5px;
   border: 2px solid #a5865a;
   font-family: "PixelitoCM",Consolas;
-  font-size: 29px;
+  font-size: 2vw;
   transition-duration: 0.4s;
 }
 
@@ -215,6 +226,8 @@ hr {
   cursor: url('assets/cake_cat_cursor.gif'), default;
 }
 
+/* Text boxes */
+
 .text-box {
   background-color: white;
   border: 3px dotted #a5865a;
@@ -223,19 +236,14 @@ hr {
   width: fit-content;
 }
 
-.cookie-border {
-  border-width: 7px;
-  border-style: solid;
-  border-image: url("assets/borders/cookie_border.gif") 7 fill round;
-  width:400px;
-}
-
 .pink-border {
   border-width: 8px;
   border-style: solid;
   border-image: url("assets/borders/cute_border.png") 8 fill round;  
   width: 400px;       
 }
+
+/* Back Home Button */
 
 .back-home-button {
   background-color: #EDE8D0;
@@ -259,6 +267,8 @@ hr {
   cursor: url('assets/cake_cat_cursor.gif'), default;
 }
 
+/* Breadcrumb */
+
 .breadcrumb {
   padding: 0 0.5rem;
 }
@@ -277,6 +287,8 @@ hr {
   margin: 0 0.60rem;
   content: "→";
 }
+
+/* Blog element */
 
 .blog-element {
   background-color: white;
@@ -302,6 +314,8 @@ hr {
   cursor: url('assets/cake_cat_cursor.gif'), default;
 }
 
+/* Post-it */
+
 .post-it {
   color: black;
   box-shadow: 10px 10px 5px gray;
@@ -312,6 +326,8 @@ hr {
 .post-it h4 {
   color: black;
 }
+
+/* Error page */
 
 .error-container {
   display: flex;
@@ -331,6 +347,8 @@ hr {
   color: brown
 }
 
+/* Overlapping images */
+
 .overlapping-images {
   display: grid;
   grid-template-areas: 'overlap';
@@ -339,6 +357,21 @@ hr {
 .overlapping-images > * {
   grid-area: overlap;
 }
+
+/* Media queries */
+
+@media only screen and (max-width: 1510px) {
+  h1 {
+    font-family: "Patchwork Stitchlings",Consolas;
+    font-size: 15px;
+    color: #EDE8D0;
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+
+
 
 
 
