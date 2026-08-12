@@ -327,5 +327,14 @@ hr {
   color: brown
 }
 
+.overlapping-images {
+  display: grid;
+  grid-template-areas: 'overlap';
+}
+
+.overlapping-images > * {
+  grid-area: overlap;
+}
+
 
 
