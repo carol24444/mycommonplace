@@ -29,8 +29,9 @@ body {
   background-color: #EDE8D0;
   color: brown;
   font-family: "Pixelify Sans";
+  margin:0;
   margin-top:-25px;
-  min-height: 100vh;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -38,8 +39,7 @@ body {
 header {
   background-color: #a5865a;
   height: 80px;
-  margin-left: -10px;
-  margin-right: -10px;
+  width: 100%;
   padding-top: 30px;
   display: flex;
   justify-content: center;
@@ -150,7 +150,8 @@ hr {
 
 .index-main {
   background-color: white;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   border: 2px solid #a5865a;
   border-radius: 25px;
   padding: 20px;
@@ -163,7 +164,8 @@ hr {
   margin: 80px auto;
   margin-top: 20px;
   padding: 20px;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .side-menu {
@@ -242,7 +244,7 @@ hr {
   border-width: 8px;
   border-style: solid;
   border-image: url("assets/borders/cute_border.png") 8 fill round;  
-  width: 400px;       
+  width: 27vw;     
 }
 
 /* Back Home Button */
