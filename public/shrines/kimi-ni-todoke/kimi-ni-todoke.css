@@ -1,0 +1,116 @@
+body {
+    background-image: url("assets/squared-background.jpg");
+    background-color: pink;
+}
+
+@font-face { 
+	font-family: "Simple Mandala"; 
+	src: url("./fonts/Simple Mandala.otf") format("opentype"); 
+	font-weight: normal;
+	font-style: normal; 
+	font-display: swap; 
+}
+
+@font-face { 
+	font-family: "Peristiwa"; 
+	src: url("./fonts/Peristiwa/Peristiwa.otf") format("opentype"); 
+	font-weight: normal;
+	font-style: normal; 
+	font-display: swap; 
+}
+
+h1 {
+    font-family: "Peristiwa";
+    font-size: 100px;
+    color: #26d994;
+    margin: 5px;
+}
+
+h2 {
+    font-family: "Simple Mandala";
+    color: salmon;
+    font-size: 45px;
+    margin: 0;
+}
+
+h3 {
+    font-family: "Simple Mandala";
+    color: #e92f4eda;
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+p {
+    font-family: "Simple Mandala";
+    font-size: 19px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+}
+
+a:hover {
+    font-weight: bold;
+    color: #ee092fda;
+}
+
+::selection {
+    background-color: pink;
+}
+
+.sheet-of-paper {
+    background-image: url("assets/paper.jpg");
+    background-size: 795px;
+    padding: 4px;
+}
+
+
+
+.heart-shape {
+mask-image: url("https://files.catbox.moe/ykcgja.png");
+mask-size: 100%;
+mask-repeat: no-repeat;
+mask-position: center;
+width: 200px;
+height: auto
+}
+
+.image-border {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+.character-profile {
+    text-align: center;
+    margin: 30px;
+    color: #e92f4eda;
+    width: 700px;
+    background-image: url("assets/paper.jpg");
+    background-size: 680px;
+}
+
+.character-name {
+    background-image: url("assets/washi-tape.jpg");
+    background-repeat: no-repeat;
+    width: fit-content;
+    margin: 30px;
+    padding: 5px;
+}
+
+.overlapping-images {
+  display: grid;
+  grid-template-areas: 'overlap';
+}
+
+.overlapping-images > * {
+  grid-area: overlap;
+}
+
+            
+
+            

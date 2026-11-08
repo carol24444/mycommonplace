@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="kimi-ni-todoke.css" type="text/css" media="all">
+        <meta charset="UTF-16">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>kimi ni todoke ♡</title>
+        <link rel="icon" type="image/x-icon" href="assets/pink-favicon.gif">
+        <script type="text/javascript">
+// <![CDATA[
+var colours=new Array('#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c'); // colours of the hearts
+var minisize=16; // smallest size of hearts in pixels
+var maxisize=28; // biggest size of hearts in pixels
+var hearts=66; // maximum number of hearts on screen
+var over_or_under="over"; // set to "over" for hearts to always be on top, or "under" to allow them to float behind other objects
+
+/*****************************
+*JavaScript Love Heart Cursor*
+*  (c)2013+ mf2fm web-design *
+*   http://www.mf2fm.com/rv  *
+*  DON'T EDIT BELOW THIS BOX *
+*****************************/
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var herz=new Array();
+var herzx=new Array();
+var herzy=new Array();
+var herzs=new Array();
+var kiss=false;
+
+if (typeof('addRVLoadEvent')!='function') function addRVLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addRVLoadEvent(mwah);
+
+function mwah() { if (document.getElementById) {
+  var i, heart;
+  for (i=0; i<hearts; i++) {
+    heart=createDiv("auto", "auto");
+    heart.style.visibility="hidden";
+	heart.style.zIndex=(over_or_under=="over")?"1001":"0";
+    heart.style.color=colours[i%colours.length];
+	heart.style.pointerEvents="none";
+    if (navigator.appName=="Microsoft Internet Explorer") heart.style.filter="alpha(opacity=75)";
+    else heart.style.opacity=0.75;
+    heart.appendChild(document.createTextNode(String.fromCharCode(9829)));
+    document.body.appendChild(heart);
+    herz[i]=heart;
+	herzy[i]=false;
+  }
+  set_scroll();
+  set_width();
+  herzle();
+}}
+
+function herzle() {
+  var c;
+  if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+    ox=x;
+    oy=y;
+    for (c=0; c<hearts; c++) if (herzy[c]===false) {
+	  herz[c].firstChild.nodeValue=String.fromCharCode(9829);
+      herz[c].style.left=(herzx[c]=x-minisize/2)+"px";
+      herz[c].style.top=(herzy[c]=y-minisize)+"px";
+      herz[c].style.fontSize=minisize+"px";
+	  herz[c].style.fontWeight='normal';
+      herz[c].style.visibility='visible';
+      herzs[c]=minisize;
+      break;
+    }
+  }
+  for (c=0; c<hearts; c++) if (herzy[c]!==false) blow_me_a_kiss(c);
+  setTimeout("herzle()", 40);
+}
+
+document.onmousedown=pucker;
+document.onmouseup=function(){clearTimeout(kiss);};
+
+function pucker() {
+  ox=-1;
+  oy=-1;
+  kiss=setTimeout('pucker()', 100);
+}
+
+function blow_me_a_kiss(i) {
+  herzy[i]-=herzs[i]/minisize+i%2;
+  herzx[i]+=(i%5-2)/5;
+  if (herzy[i]<sdown-herzs[i] || herzx[i]<sleft-herzs[i] || herzx[i]>sleft+swide-herzs[i]) {
+    herz[i].style.visibility="hidden";
+    herzy[i]=false;
+  }
+  else if (herzs[i]>minisize+2 && Math.random()<.5/hearts) break_my_heart(i);
+  else {
+    if (Math.random()<maxisize/herzy[i] && herzs[i]<maxisize) herz[i].style.fontSize=(++herzs[i])+"px";
+    herz[i].style.top=herzy[i]+"px";
+    herz[i].style.left=herzx[i]+"px";
+  }
+}
+
+function break_my_heart(i) {
+  var t;
+  herz[i].firstChild.nodeValue=String.fromCharCode(9676);
+  herz[i].style.fontWeight='bold';
+  herzy[i]=false;
+  for (t=herzs[i]; t<=maxisize; t++) setTimeout('herz['+i+'].style.fontSize="'+t+'px"', 60*(t-herzs[i]));
+  setTimeout('herz['+i+'].style.visibility="hidden";', 60*(t-herzs[i]));
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+  if (e) {
+    y=e.pageY;
+    x=e.pageX;
+  }
+  else {
+    set_scroll();
+    y=event.y+sdown;
+    x=event.x+sleft;
+  }
+}
+
+window.onresize=set_width;
+function set_width() {
+  var sw_min=999999;
+  var sh_min=999999;
+  if (document.documentElement && document.documentElement.clientWidth) {
+    if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+    if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+  }
+  if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+    if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+    if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+  }
+  if (document.body.clientWidth) {
+    if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+    if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+  }
+  if (sw_min==999999 || sh_min==999999) {
+    sw_min=800;
+    sh_min=600;
+  }
+  swide=sw_min;
+  shigh=sh_min;
+}
+
+window.onscroll=set_scroll;
+function set_scroll() {
+  if (typeof(self.pageYOffset)=='number') {
+    sdown=self.pageYOffset;
+    sleft=self.pageXOffset;
+  }
+  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+    sdown=document.body.scrollTop;
+    sleft=document.body.scrollLeft;
+  }
+  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+    sleft=document.documentElement.scrollLeft;
+    sdown=document.documentElement.scrollTop;
+  }
+  else {
+    sdown=0;
+    sleft=0;
+  }
+}
+
+function createDiv(height, width) {
+  var div=document.createElement("div");
+  div.style.position="absolute";
+  div.style.height=height;
+  div.style.width=width;
+  div.style.overflow="hidden";
+  div.style.backgroundColor="transparent";
+  return (div);
+}
+// ]]>
+        </script>
+    </head>
+
+    <body>
+
+        <div style="min-height: 74vh; display: flex; flex-direction: column;">
+
+            <div style="display: flex;">
+
+              <div>
+                <div class="overlapping-images">
+                  <h1>Kimi Ni Todoke... from me to you</h1>
+                  <img src="assets/manga-covers/manga-cover-sawako-kazehaya.png" style="height: 200px; justify-self: end; transform: translate(-5px,0); z-index: -1">
+                </div>
+
+                <div class="overlapping-images">
+                  <div class="sheet-of-paper" style="margin-left: 8px;">
+                    <h2>Introductory Thoughts</h2>
+                    <p>Kimi Ni Todoke is a romance and slice of life anime/manga that explores the life of Kuronuma Sawako, a 15-year-old girl who never really had any friends, due to her supposedly weird and scary behavior. Her pale skin, long straight black hair and odd demeanour led people to compare her to Sadako, the character from the horror movie The Ring, and literally run away from her whenever she approached them. Her classmates started calling her "Sadako" and making up rumors about her being a witch who brings bad luck.</p>
+                    <br>
+                    <p>The truth is Sawako is nothing more than a sweet girl who's just awkward and has a hard time interacting with others. Thankfully, someone noticed that and is willing to help her realize how great and capable she truly is.</p>
+                    <br>
+                    <p>This manga is about much more than the love story of Kuronuma Sawako and Kazehaya Shota. This is the story of a girl who is constantly outdoing herself and experiencing things she never thought she would get to experience because she dared to step out of her comfort zone. It's about seeing this girl grow up in front of your eyes and seeing how far she goes just in 3 years. It's about love, but not just the romantic kind. It's about how we navigate our relationships on the daily. It's about true friendship and girlhood. Yes, there is a mean girl, but this story twists and turns that trope in completely unpredictable ways.</p>
+                    <br>
+                    <p>I am going to be talking about this story in its entirety, including the manga. If you're reading this and only watched the anime, I can understand why you would doubt my words. At the time of writing this (and probably for a very very long time), the Kimi Ni Todoke anime has 3 seasons. Although the story touched on some more profound topics already, I believe that the best moments of each character and some of the best character arcs are yet to be finished.</p>
+                    <br>
+                    <p>Now, I understand this story is not perfect. I know many people criticize the pacing, and just how freaking long it takes for Sawako and Kazehaya to finally get together, and at times the slow burn feels more frustrating than anything. Although I understand each of Sawako and Kazehaya's actions and just how long it all takes, as a viewer, I agree that it's extremely frustrating. However, I believe that what makes this story special is not really the slow burn between Sawako and Kazehaya. To me, this story has always been about Sawako and her growth as a person. Her relationship with Kazehaya is one of the ways the story demonstrates that. Plus, the side characters are all extremely compelling and exciting to watch.</p>
+                  </div>
+                  <img src="assets/hearts.gif" style="height: 30px; justify-self: start; align-items: start; transform: translate(400px, 20px);">
+                  <img src="assets/red-washi-tape.png" style="height: 45px; justify-self: end; align-self: start; transform: rotate(30deg) translate(40px,-10px)">
+                  <img src="assets/orange-washi-tape.png" style="height: 45px; justify-self: start; align-self: end; transform: translate(-50px,-25px) rotate(30deg)">
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="assets/Kimi_ni_Todoke_logo.svg.webp" style="height: 700px; margin-left: 80px; margin-top: 10px; margin-right: 20px;">
+                <div class="overlapping-images" style="margin-top: 20px;">
+                  <img src="assets/manga-covers/manga-cover-3-besties.jpg" style="height: 150px;">
+                  <img src="assets/manga-covers/manga-cover-sawako.png" style="height: 150px; transform: translate(60px,75px)">
+                  <img src="assets/teddy-bear.png" style="transform: translate(0,150px)">
+                </div>
+              </div>
+            </div>
+
+            <img src="assets/flower-divider.png" style="margin: 15px">
+
+            <h1>The Characters</h1>
+
+            <div style="display: flex;">
+
+              <div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/sawako.jpg" class="heart-shape">
+                  <h3>Kuronuma Sawako</h3>
+                  <p>Our beloved main character. She's a big introvert who struggles socially, but has the biggest heart. She might be clueless when it comes to social interactions, but she's very smart academically. She's organized, dilligent and competent in all she does. She always gives everything her all, a trait that her friends admire her for. Her hobbies are crocheting, gardening, running, cooking and cleaning. My favorite thing about her character is her optimism no matter the situation and I just love how her femininity and gentle nature is never used by the story to make her seem lesser than others. Instead, these traits are portrayed as a strength.</p>
+                </div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/chizuru.jpg" class="heart-shape">
+                  <h3>Yoshida Chizuru</h3>
+                  <p>My favorite character! Chizuru becomes Sawako's best friend alongside Ayane very early on. Chizuru is extroverted and impulsive. She wears her emotions on her sleeve and is very straightforward and honest. She doesn't really think before she speaks. Chizuru might not be the smartest, but she is a great person who always stands up for what's right. She's great at sports and excels at basically all of them. She's also very physically strong, having won fights against 99 dudes when she was in middle school. Her 100 streak was ruined by Ryu, her childhood best friend, whom she lost against.</p>
+                </div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/ayane.jpg" class="heart-shape">
+                  <h3>Yano Ayane</h3>
+                  <p>Ayane is Chizuru's best friend, and also becomes Sawako's best friend early on in the story. Honestly, there's so much to say about her, I don't even know where to start. Ayane comes off as a confident, know-it-all kinda girl. She never lets anyone step on her and is VERY good at navigating social situations. She is smart and cunning, the kind of character who could be a villain (she even has a villain laugh!), but is a good person who only uses her cunning tactics on those who deserve it. Although she is very brave and smart, she's actually very insecure and relies on male validation to feel better about herself, even if the men she is with are never good for her. She doesn't think she's capable or deserving of good things so she is okay with settling for less. She also has a very different relationship with love from the other girls. I think her character adds an entire layer of depth to this story, and shows that romantic relationships can look very different from one another and are not always innocent sunshine and rainbows.</p>
+                </div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/kurumi.webp" class="heart-shape">
+                  <h3>Kurumi Ume</h3>
+                  <p>Kurumi (I'm not legally allowed to call her by her first name, okay?) is a girl from a different class who went to the same middle school as Kazehaya, Ryu and Chizuru. She has liked Kazehaya ever since then. When talking to people, she is always very sweet, kind and helpful, but it's obvious (to the viewer (and Ayane, apparently)) that it's all an act she puts up. In reality, she's a hot-headed and manipulative person. She's willing to conjure plans to make anyone that Kazehaya might like look bad, so she can be the one he chooses in the end. Yeah, I know she sounds terrible, well she is, but she does get the best redemption arc. When I watched the anime I hated her so much and I couldn't forgive her but after reading the manga she completely won me over and I love her now.</p>
+                </div>
+
+              </div>
+
+              <div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/kazehaya.jpg" class="heart-shape">
+                  <h3>Kazehaya Shota</h3>
+                  <p>Sawako's love interest. He is an outgoing guy who's very popular, both with the guys and the girls. He's charming and people are just naturally drawn to him. However, he is never pressured by his popularity and does not let it impact his decisions and morals. He will not hesitate to call people out for their behavior, and hates people who spread rumors. He always tries to make everyone feel welcomed and included and is always there to help others. Despite not seeming like it at first glance, he is quite stubborn and short-tempered, but he is very self-aware of these traits and never uses them to take advantage of others. He used to play baseball in middle school with Ryu, but quit in highschool.</p>
+                </div>
+
+                <div class="character-profile">
+                    <img src="assets/characters/ryu.jpeg" class="heart-shape">
+                    <h3>Sanada Ryu</h3>
+                    <p>Ryu is Kazehaya's best friend and Chizuru's childhood friend. He plays baseball and is very dedicated to the sport. He's a quiet guy who keeps to himself and very rarely says what he thinks. Though, when he does, he always says the right thing people need to hear. He never expresses his emotions, so he is misunderstood by others sometimes, but he is a reliable friend. Ryu is a very unbothered guy who doesn't really care what others think of him. Truly, Ryu is a simple man. All he needs in life is Chizuru, baseball, onigiri and Kazehaya's dog.</p>
+                </div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/kento.webp" class="heart-shape">
+                  <h3>Miura Kento</h3>
+                  <p>Miura Kento was the new student in class in the second year of highschool and sat next to Sawako. He quickly became interested in her due to her quirky nature. He's a very popular guy due to his looks and charisma. He quickly becomes interested in Sawako and tries to help her be more sociable. It's difficult to understand his true motives at first. The truth is he is just a sweet guy who is surprisingly dense at times and doesn't really understand Sawako until later on in the story. He seems cunning at first, but he isn't. He only has good intentions in everything he does, even if he doesn't always make the right call.</p>
+                </div>
+
+                <div class="character-profile">
+                  <img src="assets/characters/arai-pin.jpg" class="heart-shape">
+                  <h3>Kazuichi Arai</h3>
+                  <p>Also known as Pin, Arai is the students' homeroom teacher and PE teacher. He is also Ryu's baseball coach. For a long time throughout the story, Pin seems to just be the comedic relief side character. The goofy teacher who likes making fun of the students, but there's more to him than that. Chizuru and Ayane always make fun of him, saying that he spends so much time around the students because he has no life, but later we understand that he does that so he can truly understand the kids and help them. He becomes a true teacher and life coach to the kids when they have to make big decisions. He understands them like no one else does and gives them the right advice at the right time.</p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <h1>Character Arcs - Work In Progress</h1>
+
+            
+    </body>
+</html>
