@@ -66,6 +66,11 @@ footer a {
   text-decoration: underline;
 }
 
+footer a:link {
+  color: #EDE8D0;
+  text-decoration: underline;
+}
+
 footer a:hover {
   color: brown;
 }
@@ -108,14 +113,6 @@ h4{
   margin-bottom: 10px;
 }
 
-h4 a{
-  color: #a5865a;
-}
-
-h4 a:hover {
-  color: brown;
-}
-
 a {
   color: brown;
   font-weight: bold;
@@ -133,6 +130,15 @@ a:hover {
 ::selection {
   color: #EDE8D0;
   background: #933c3c;
+}
+
+h4 a {
+  color: #a5865a;
+  text-decoration: underline;
+}
+
+h4 a:hover {
+  color: brown;
 }
 
 hr {
@@ -290,33 +296,6 @@ hr {
   content: "→";
 }
 
-/* Blog element */
-
-.blog-element {
-  background-color: white;
-  border: 2px solid #a5865a;
-  margin: 20px;
-  text-align:left;
-  height: fit-content;
-  width: 400px;
-  padding: 15px;
-}
-
-.blog-element h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.blog-element a {
-  color: #a5865a;
-  text-decoration: none;
-}
-
-.blog-element a:hover {
-  text-decoration: underline;
-  cursor: url('assets/cake_cat_cursor.gif'), default;
-}
-
 /* Post-it */
 
 .post-it {
@@ -359,19 +338,6 @@ hr {
 
 .overlapping-images > * {
   grid-area: overlap;
-}
-
-/* Media queries */
-
-/*
-@media only screen and (max-width: 1510px) {
-  h1 {
-    font-family: "Patchwork Stitchlings",Consolas;
-    font-size: 15px;
-    color: #EDE8D0;
-    text-align: center;
-    margin-top: 15px;
-  }
 }
 
 
