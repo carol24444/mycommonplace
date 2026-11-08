@@ -1,6 +1,8 @@
 body {
     background-image: url("assets/squared-background.jpg");
     background-color: pink;
+    margin: 0;
+    max-width: 100%;
 }
 
 @font-face { 
